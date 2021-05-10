@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content%}
+
+ <div class="topleft">
+    <p> Here is our lot list:</p>
+        <ul class="product-list">
+            {% for product in page_obj %}
+                <li>
+                    <div>Lot No. {{product.id}}</div>
+                    <div>{{product.name}}</div>
+                    <div>{{product.price}} EUR</div>
+                    <img src="{{ product.image.url }}" width="100"/>
+                    <div>{{product.details}}</div>
+                </li>
+            {% endfor %}
+        </ul>
+ </div>
+{% endblock %}

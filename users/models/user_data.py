@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
-from Bogdans_shop.models import CustomModel
+from bogdans_shop.models import CustomModel
 from utils.constants import SHIPPING_ADDRESS, BILLING_ADDRESS
 
 # Create your models here.
@@ -20,3 +20,7 @@ class Address(CustomModel):
 
     type = models.IntegerField(choices=Types.choices, null=False, default=SHIPPING_ADDRESS)
 
+
+class Profile(CustomModel):
+    user = models.OneToOneField(AuthUserModel, on_delete=models.CASCADE, related_name='profile')
+    avatar = models.ImageField(upload_to='profiles', default=None, null=True)

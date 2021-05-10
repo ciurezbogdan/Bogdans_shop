@@ -1,0 +1,148 @@
+[{
+  "name": "chair",
+  "description": " Description",
+  "category": [{
+    "name":"Furniture"
+    },{
+    "name":"Wood"
+    }],
+  "image": "products/chair.jpg",
+  "price": 5.00,
+  "auction_price": 10,
+  "user": {
+    "first_name": "John",
+    "last_name": "Doe",
+    "email": "john.doe@test.com"
+  }
+}, {
+  "name": "pathefon",
+  "description": " Description",
+  "category": [{
+    "name":"Electrics"
+    }],
+  "image": "products/pathefon.png",
+  "price": 4.50,
+  "auction_price": 15.50,
+  "user": {
+    "first_name": "Tom",
+    "last_name": "Monaghan",
+    "email": "tom_monaghan@test.com"
+  }
+}, {
+  "name": "voltmeters",
+  "description": " Description",
+  "category": [{
+    "name":"Electrics"
+    }],
+  "image": "products/voltmeters.jpg",
+  "price": 6.50,
+  "auction_price": 7.00,
+  "user": {
+    "first_name": "Vienna",
+    "last_name": "Field",
+    "email": "vienna_field@test.com"
+  }
+}, {
+  "name": "table",
+  "description": " Description",
+  "category": [{
+    "name":"Furniture"
+    },{
+    "name":"Wood"
+    }],
+  "image": "products/table.jpeg",
+  "price": 6.50,
+  "auction_price": 7.00,
+  "user": {
+    "first_name": "Mark",
+    "last_name": "Dwain",
+    "email": "mark_dwain@test.com"
+  }
+}, {
+  "name": "painting",
+  "description": " Description",
+  "category": [{
+    "name":"Paintings"
+    }],
+  "image": "products/painting.png",
+  "price": 3.50,
+  "auction_price": 12.50,
+  "user": {
+    "first_name": "James",
+    "last_name": "McAllister",
+    "email": "james_mcallister@test.com"
+  }
+}, {
+  "name": "lamp",
+  "description": " Description",
+  "category": [{
+      "name": "Electrics"
+    }],
+  "image": "products/lamp.png",
+  "price": 5.00,
+  "auction_price": 3.50,
+  "user": {
+    "first_name": "Luigi",
+    "last_name": "D'Argent",
+    "email": "luigi_dargent@test.com"
+  }
+}, {
+  "name": "toy_train",
+  "description": "Description",
+  "category": [{
+    "name":"Toys"
+    },{
+    "name":"Wood"
+    }],
+  "image": "products/toy.png",
+  "price": 5.00,
+  "auction_price": 3.50,
+  "user": {
+    "first_name": "Paolo",
+    "last_name": "Linguini",
+    "email": "paolo_linguini@test.com"
+  }
+}, {
+  "name": "sofa",
+  "description": " Description",
+  "category": [{
+    "name": "Furniture"
+    }],
+  "image": "products/sofa.jpg",
+  "price": 2.50,
+  "auction_price": 5.25,
+  "user": {
+    "first_name": "Ionut",
+    "last_name": "Vladescu",
+    "email": "ionut_vladescu@test.com"
+  }
+},
+  {
+    "name": "radio",
+    "description": " Description ",
+    "category": [{
+      "name": "Electrics"
+      }],
+    "image": "products/radio.png",
+    "price": 2.50,
+    "auction_price": 5.25,
+    "user": {
+      "first_name": "Marco",
+      "last_name": "Di Natale",
+      "email": "marco_di_natale@test.com"
+    }
+  }, {
+  "name": "golden ring",
+  "description": " Description ",
+  "category": [{
+    "name": "Jeweleries"
+    }],
+  "image": "products/golden_ring.png",
+  "price": 2.50,
+  "auction_price": 5.25,
+  "user": {
+    "first_name": "Mary" ,
+    "last_name": "Jane",
+    "email": "maryjane@test.com"
+  }
+}]

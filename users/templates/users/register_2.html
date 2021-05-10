@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    <div class = "topleft">
+        <form method="post" action="{% url 'users:account:register' %}" >
+            {% csrf_token %}
+            <div>
+                <label> <font face = "Edwardian Script ITC" size = "6">First Name</font> </label>
+                <input name="first_name" type="text" />
+            </div>
+            <div>
+                <label> <font face = "Edwardian Script ITC" size = "6">Last Name</font> </label>
+                <input name="last_name" type="text" />
+            </div>
+            <div>
+                <label> <font face = "Edwardian Script ITC" size = "6">Email</font> </label>
+                <input name="email" type="email" />
+            </div>
+            <input type="submit" value="Register" />
+
+        </form>
+    </div>
+{% endblock %}

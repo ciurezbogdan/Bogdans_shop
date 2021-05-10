@@ -1,13 +1,26 @@
 {% extends 'base.html' %}
+{% load static  %}
 
 {% block title %}
-    <title> Bogdan's Shop</title>
+    <title> Bogdan's Shop </title>
 {% endblock %}
 
 {% block content %}
-    <h1> {{ brand}} </h1>
-    <h2> Under Construction</h2>
-    {% if user.is_authenticated %}
-        <h3> Welcome, {{ request.user.first_name}} ! </h3>
-    {% endif %}
+    <div class = "topleft">
+        <img src="{% static 'images/antique_store_b.png' %}" width="200" />
+        <h1> {{ brand}} </h1>
+        {% if user.is_authenticated %}
+            <h3> Welcome, {{ request.user.first_name}} ! </h3>
+        {% endif %}
+        <p>We have following categories you can choose from.</p>
+        <div>
+            <a href="{% url 'products:view_all_products' %}"> <font color="#800000" face = "Edwardian Script ITC" size = "6">Show all products</font></a>
+
+        </div>
+        <ul>
+        {% for e  in categories %}
+            <li>{{ e }}</li>
+        {% endfor %}
+        </ul>
+    </div>
 {% endblock %}

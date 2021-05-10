@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
-from Bogdans_shop.models import CustomModel
+from bogdans_shop.models import CustomModel
 from products.models import Products
 
 AuthUserModel = get_user_model()
