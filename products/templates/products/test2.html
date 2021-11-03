@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+</head>
+<body>
+<table>
+
+    <tr>
+      <th>Lot</th>
+      <th>Product</th>
+      <th>Price</th>
+      <th>Photo</th>
+      <th>Details</th>
+    </tr>
+    <tr>
+      {% for product in product_list %}
+
+                    <td>Lot No. {{product.id}}</td>
+                    <td>{{product.name}}</td>
+                    <td>{{product.price}} EUR</td>
+                    <td><img src="{{ product.image.url }}" width="100"/></td>
+                    <td>{{product.details}}</td>
+      {% endfor %}
+    </tr>
+
+</table>
+</body>
+</html>
