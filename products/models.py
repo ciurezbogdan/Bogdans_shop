@@ -18,8 +18,8 @@ class Category(CustomModel):
 
 
 class ProductCategories(CustomModel):
-    product = models.ForeignKey('products', on_delete=models.CASCADE)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    product = models.ForeignKey('products', on_delete=models.CASCADE, related_name='product_category')
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, related_name='product_category')
 
 
 class Products(CustomModel):

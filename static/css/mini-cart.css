@@ -1,17 +1,20 @@
 .mini-cart-container {
+    float: right;
+    margin-top: 20;
     margin-left: 50px;
+
     position: relative;
 }
 
 .mini-cart-container .icon-container {
-    padding: 10px;
+    padding: 3px;
     border-radius: 100%;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 3px solid white;
+    border: 2px solid white;
 }
 
 .mini-cart-container .icon-container svg path {
@@ -21,11 +24,25 @@
 .mini-cart-container .number {
     position: absolute;
     color: red;
-    z-index: 2;
+    z-index: 1;
     background-color: black;
-    border-radius: 100%;
-    top: 10px;
-    right: 10px;
+    border-radius: 30%;
+    top: -5px;
+    right: 1px;
     font-size: 16px;
     font-weight: bold;
+}
+.mini-cart-container .badge {
+    position: absolute;
+    margin-left: 15px;
+    background-color: black;
+    border-radius: 10px;
+    color: red;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 1;
+    padding: 3px 7px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
 }

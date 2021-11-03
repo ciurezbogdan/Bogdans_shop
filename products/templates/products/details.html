@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static  %}
+
+{% block content %}
+    <div class = "topleft">
+        <img src="{% static 'images/antique_store_b.png' %}" width="200" />
+        <h1> {{ brand}} </h1>
+        {% if user.is_authenticated %}
+            <h3> Welcome, {{ request.user.first_name}} ! </h3>
+        {% endif %}
+    </div>
+    <div>
+        <form class="add_product" action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.non_field_errors }}
+            <div>
+                {{ form.name.errors }}
+                <label>Name:</label>
+                {{ form.name }}
+            </div>
+            <div>
+                {{ form.price.errors }}
+                <label>Price:</label>
+                {{ form.price }}
+            </div>
+            <div>
+                {{ form.auction_price.errors }}
+                <label>Auction Price:</label>
+                {{ form.auction_price }}
+            </div>
+            <div>
+                {{ form.description.errors }}
+                <label>Description:</label>
+                {{ form.description }}
+            </div>
+            <div>
+                {{ form.image.errors }}
+                <label>Image:</label>
+                {{ form.image }}
+            </div>
+            <div>
+                {{ form.category.errors }}
+                <label>Category:</label>
+                {{ form.category }}
+            </div>
+        <input type="submit" value="Save">
+        </form>
+    </div>
+{% endblock %}

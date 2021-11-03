@@ -2,9 +2,45 @@
 
 {% block content%}
 
-    <p class="topleft"> add_product page !</p>
+    <p class="topleft">
+        {% if user.is_authenticated %}
+        <font color="#800000" face = "Edwardian Script ITC" size = "8"> {{ request.user.first_name}} you can add items for sale! </font>
+        {% endif %}
+    </p>
 
-    <form class="topleft">
+    <form class="add_product" action="{% url 'products:add_product' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.non_field_errors }}
+        <div>
+            {{ form.name.errors }}
+            <label>Name:</label>
+            {{ form.name }}
+        </div>
+        <div>
+            {{ form.price.errors }}
+            <label>Price:</label>
+            {{ form.price }}
+        </div>
+        <div>
+            {{ form.auction_price.errors }}
+            <label>Auction Price:</label>
+            {{ form.auction_price }}
+        </div>
+        <div>
+            {{ form.description.errors }}
+            <label>Description:</label>
+            {{ form.description }}
+        </div>
+        <div>
+            {{ form.image.errors }}
+            <label>Image:</label>
+            {{ form.image }}
+        </div>
+        <div>
+            {{ form.category.errors }}
+            <label>Category:</label>
+            {{ form.category }}
+        </div>
         <input type="submit" value="Add Product">
     </form>
 

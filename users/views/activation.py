@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from django.utils.decorators import decorator_from_middleware
 from users.middlewares.activation import ValidateTokenMiddleware
 from users.models import Activation
@@ -30,7 +30,7 @@ def activation_view(request, token):
         if authenticated_user is not None:
             login(request, authenticated_user)
 
-        return redirect('/')
+        return redirect(reverse('users:login_view'))
 
     return render(request, 'users/activation/activate.html', {
         'token': token,

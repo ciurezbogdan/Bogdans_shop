@@ -23,4 +23,4 @@ class Address(CustomModel):
 
 class Profile(CustomModel):
     user = models.OneToOneField(AuthUserModel, on_delete=models.CASCADE, related_name='profile')
-    avatar = models.ImageField(upload_to='profiles', default=None, null=True)
+    avatar = models.ImageField(upload_to='profiles', default='avatar_face', null=True)

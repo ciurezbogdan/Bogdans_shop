@@ -12,8 +12,12 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 from pathlib import Path
 from decouple import config
+from django.urls import reverse_lazy
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+from django.urls import reverse_lazy
+
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
@@ -34,6 +38,7 @@ INSTALLED_APPS = [
     'products.apps.ProductsConfig',
     'orders.apps.OrdersConfig',
     'auctions.apps.AuctionsConfig',
+    'fontawesome-free',
     'social_django',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -128,7 +133,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
 
-LOGIN_REDIRECT_URL = '/'
+# LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/users/login_view/'
 LOGOUT_REDIRECT_URL = '/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

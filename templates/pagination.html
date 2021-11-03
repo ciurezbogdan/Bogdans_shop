@@ -1,4 +1,5 @@
 {% load static %}
+{% load get_pagination %}
 
 
 
@@ -9,14 +10,18 @@
 
 <div class="pagination">
     <a class="wrapper circle" href="{{ request | pagination_url }}">
-        <i class="fas fa-angle-double-left"></i>
+        </i><i class="fas fa-fast-backward"></i>
     </a>
     {% if page_obj.has_previous %}
-        <a class="wrapper circle" href="{{ request | pagination_url:page_obj.previous_page_number}}"></a>
+        <a class="wrapper circle" href="{{ request | pagination_url:page_obj.previous_page_number}}">
+            <i class="fas fa-angle-left"></i>
+        </a>
     {% else %}
-        <a class="wrapper circle"></a>
+        <a class="wrapper circle">
+            <i class="fas fa-step-backward"></i>
+        </a>
     {% endif %}
-        <i class="fas fa-angle-left"></i>
+
     {% with aux_page_obj=page_obj|visible_pages %}
         {% for page in aux_page_obj %}
             {% if page is None %}
@@ -28,12 +33,15 @@
     {% endwith %}
 
     {% if page_obj.has_next %}
-        <a class="wrapper circle" href="{{ request | pagination_url:page_obj.next_page_number}}"></a>
+        <a class="wrapper circle" href="{{ request | pagination_url:page_obj.next_page_number}}">
+             <i class="fas fa-step-forward"></i>
+        </a>
     {% else %}
-        <a class="wrapper circle"></a>
+        <a class="wrapper circle">
+        <i class="fas fa-angle-right"></i>
+        </a>
     {% endif %}
-      <i class="fas fa-angle-right"></i>
-    <a class="wrapper circle" href="{{ request | pagination_url:page_obj.paginator.num_pages}}">
-        <i class="fas fa-angle-double-right"></i>
-    </a>
+        <a class="wrapper circle" href="{{ request | pagination_url:page_obj.paginator.num_pages}}">
+         <i class="fas fa-fast-forward"></i>
+        </a>
 </div>

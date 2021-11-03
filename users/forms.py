@@ -2,6 +2,8 @@ from django import forms
 from django.contrib.auth import get_user_model
 from django.contrib.auth.password_validation import password_validators_help_text_html, validate_password
 from django.contrib.auth.forms import UserCreationForm as BaseUserCreationForm
+from users.models import Address, Profile
+from django.forms import ModelForm as BaseModelForm
 
 AuthUser = get_user_model()
 
@@ -117,3 +119,35 @@ class UserCreationForm(BaseUserCreationForm):
         if commit:
             user.save()
         return user
+
+
+class AddressForm(forms.ModelForm):
+    class Meta:
+        model = Address
+        fields = ['street', 'city', 'country']
+
+    def __init__(self, user, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.user = user
+
+    def save(self, commit=True):
+        item = super(BaseModelForm, self).save(commit=False)
+        item.user = self.user
+        item.save()
+        return item
+
+
+class ProfileForm(forms.ModelForm):
+    class Meta:
+        model = Profile
+        fields = ['avatar']
+
+    def __init__(self, user, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.user = user
+
+    def save(self, commit=True):
+        item = super(BaseModelForm, self).save(commit=False)
+        item.user = self.user
+        item.save()
+        return item

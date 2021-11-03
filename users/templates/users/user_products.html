@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+<ul>
+        {% for prod in user_products %}
+            <li>
+                <div>
+                    <div>{{ prod.name }}</div>
+                    <div>{{ prod.price }} RON</div>
+                </div>
+
+            </li>
+        {% endfor %}
+  </ul>

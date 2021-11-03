@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static  %}
+
+
+{% block content %}
+    <div class = "topleft">
+        <img src="{% static 'images/antique_store_b.png' %}" width="200" />
+        <img src="{{ user.profile.avatar.url}}" width="100" radius="50%" />
+        <h1> {{ brand}} </h1>
+        {% if user.is_authenticated %}
+            <h3> Welcome, {{ request.user.first_name}} ! </h3>
+        {% endif %}
+        <div>
+            <a href="{% url 'products:view_all_products' %}"> <font color="#800000" face = "Edwardian Script ITC" size = "6">Show all items</font></a>
+        </div>
+    </div>
+    <div class = "midleleft">
+        <a href="{% url 'products:add_product' %}"> <font color="#800000" face = "Edwardian Script ITC" size = "6"> Add items </font></a>
+    </div>
+
+    <div class="lowleft">
+         <ul class="product-list">
+             <div><font color="#800000" face = "Edwardian Script ITC" size = "6"> My items: </font> </div>
+            {% for prod in products %}
+                <li>
+                    <div>
+                        <img src="{{ prod.image.url }}" width="100"/>
+                        <div>{{ prod.name }}</div>
+                        <div>{{ prod.price }} RON</div>
+                        <div> Sold by {{ request.user.first_name }}</div>
+                        <a href="/products/{{ prod.id }}">
+                            <font color="#800000" face = "Edwardian Script ITC" size = "6"> edit </font>
+                        </a>
+                    </div>
+                </li>
+            {% endfor %}
+         </ul>
+    </div>
+{% endblock %}

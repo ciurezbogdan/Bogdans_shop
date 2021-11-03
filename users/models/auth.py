@@ -20,6 +20,7 @@ class AuthUserManager(BaseUserManager):
             last_name=last_name,
             email=email
         )
+        #user.set_password(password)
         user.is_social_auth = is_social_auth
         user.save()
 

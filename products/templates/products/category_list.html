@@ -1,16 +1,10 @@
 {% extends 'base.html' %}
-{% load static %}
-
-
-{% block style %}
-    <link href="{% static 'css/filters.css' %}" rel="stylesheet" type="text/css">
-{% endblock %}
+{% load static  %}
 
 {% block content%}
 
  <div class="topleft">
-    <p><font color="#800000" face = "Edwardian Script ITC" size = "8">Here is our lot list:</font></p>
-     {% include 'products/filters.html' %}
+    <p><font color="#800000" face = "Edwardian Script ITC" size = "8">Here is our lot for {{ category }}:</font></p>
      {% include 'pagination.html' %}
         <ul class="product-list">
             {% for product in page_obj %}
